@@ -65,6 +65,7 @@ export const ResponsiveWrapper = styled.div`
   }
 `;
 
+//TODo this will control the metheors title image
 export const StyledLogo = styled.img`
   width: 200px;
   @media (min-width: 767px) {
@@ -74,11 +75,12 @@ export const StyledLogo = styled.img`
   transition: height 0.5s;
 `;
 
+//TODO this is for the styling of the gif
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px dashed var(--secondary);
-  background-color: var(--accent);
-  border-radius: 100%;
+  //box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
+  //border: 4px dashed var(--secondary);
+  //background-color: var(--accent);
+  //border-radius: 100%;
   width: 200px;
   @media (min-width: 900px) {
     width: 250px;
@@ -151,6 +153,37 @@ function App() {
         dispatch(fetchData(blockchain.account));
       });
   };
+  const claimPreNFTs = () => {
+    let cost = CONFIG.PRE_MINT_WEI_COST;
+    let gasLimit = CONFIG.GAS_LIMIT;
+    let totalCostWei = String(cost * mintAmount);
+    let totalGasLimit = String(gasLimit * mintAmount);
+    console.log("Cost: ", totalCostWei);
+    console.log("Gas limit: ", totalGasLimit);
+    setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
+    setClaimingNft(true);
+    blockchain.smartContract.methods
+      .PreSaleMint(mintAmount)
+      .send({
+        gasLimit: String(totalGasLimit),
+        to: CONFIG.CONTRACT_ADDRESS,
+        from: blockchain.account,
+        value: totalCostWei,
+      })
+      .once("error", (err) => {
+        console.log(err);
+        setFeedback("Sorry, something went wrong please try again later.");
+        setClaimingNft(false);
+      })
+      .then((receipt) => {
+        console.log(receipt);
+        setFeedback(
+          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+        );
+        setClaimingNft(false);
+        dispatch(fetchData(blockchain.account));
+      });
+  };
 
   const decrementMintAmount = () => {
     let newMintAmount = mintAmount - 1;
@@ -162,8 +195,8 @@ function App() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
+    if (newMintAmount > 2) {
+      newMintAmount = 2;
     }
     setMintAmount(newMintAmount);
   };
@@ -208,6 +241,8 @@ function App() {
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
           </s.Container>
           <s.SpacerLarge />
+
+          {/* TODO this will control the styling around the main border */}
           <s.Container
             flex={2}
             jc={"center"}
@@ -216,7 +251,7 @@ function App() {
               backgroundColor: "var(--accent)",
               padding: 24,
               borderRadius: 24,
-              border: "4px dashed var(--secondary)",
+              border: "4px solid var(--secondary)",
               boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
@@ -357,6 +392,19 @@ function App() {
                         onClick={(e) => {
                           e.preventDefault();
                           claimNFTs();
+                          getData();
+                        }}
+                      >
+                        {claimingNft ? "BUSY" : "BUY"}
+                      </StyledButton>
+                    </s.Container>
+                    <s.SpacerSmall />
+                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                      <StyledButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          claimPreNFTs();
                           getData();
                         }}
                       >
