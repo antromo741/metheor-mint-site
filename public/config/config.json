@@ -1,19 +1,20 @@
 {
-  "CONTRACT_ADDRESS": "0x8b32f368216f135467cce5b1817a67f569bcfb57",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x8b32f368216f135467cce5b1817a67f569bcfb57",
+  "CONTRACT_ADDRESS": "0xf172057796C0a46174441C63156cDB4db6021fE8",
+  "SCAN_LINK": "https://etherscan.io/address/0xf172057796c0a46174441c63156cdb4db6021fe8",
   "NETWORK": {
-    "NAME": "Rinkeby",
+    "NAME": "Ethereum",
     "SYMBOL": "ETH",
-    "ID": 4
+    "ID": 1
   },
   "NFT_NAME": "The Metheors NFT",
   "SYMBOL": "MNFT",
-  "MAX_SUPPLY": 2111,
-  "WEI_COST": 3000000000000000,
-  "PRE_MINT_WEI_COST": 1000000000000000,
-  "DISPLAY_COST": 0.12,
-  "GAS_LIMIT": 285000,
+  "MAX_SUPPLY": 2112,
+  "WEI_COST": 150000000000000000,
+  "PRE_MINT_WEI_COST": 120000000000000000,
+  "DISPLAY_COST": 0.15,
+  "DISPLAY_PRE_COST": 0.12,
+  "GAS_LIMIT": 280000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/metheors-nft-collection",
   "SHOW_BACKGROUND": true
 }
