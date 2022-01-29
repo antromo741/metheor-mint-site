@@ -183,7 +183,7 @@ document.getElementById('connectButton', connect);
 // any buttons the user can click to initiate the request.
 // MetaMask will reject any additional requests while the first is still
 // pending.
-function connect() {
+/* function connect() {
   ethereum
     .request({ method: 'eth_requestAccounts' })
     .then(handleAccountsChanged)
@@ -196,4 +196,4 @@ function connect() {
         console.error(err);
       }
     });
-}
+} */
