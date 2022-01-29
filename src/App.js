@@ -298,15 +298,16 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Public Mint for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                  Presale or Whitelist for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_PRE_COST}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.SpacerXSmall />
+                
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Presale or Whitelist for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_PRE_COST}{" "}
+                  Public Mint for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
@@ -317,7 +318,7 @@ function App() {
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
-                blockchain.smartContract === null ? (
+                  blockchain.smartContract === null ? (
                   <s.Container ai={"center"} jc={"center"}>
                     <s.TextDescription
                       style={{
@@ -399,11 +400,11 @@ function App() {
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          claimNFTs();
+                          claimPreNFTs();
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "Public Mint"}
+                        {claimingNft ? "BUSY" : "Pre-Sale Mint"}
                       </StyledButton>
                     </s.Container>
                     <s.SpacerSmall />
@@ -412,11 +413,11 @@ function App() {
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          claimPreNFTs();
+                          claimNFTs();
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "Pre-Sale Mint"}
+                        {claimingNft ? "BUSY" : "Public Mint"}
                       </StyledButton>
                     </s.Container>
                   </>
