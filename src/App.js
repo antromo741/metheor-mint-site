@@ -395,6 +395,25 @@ function App() {
                       </StyledRoundButton>
                     </s.Container>
                     <s.SpacerSmall />
+                    <s.TextDescription
+            style={{
+              textAlign: "center",
+              color: "var(--primary-text)",
+            }}
+          >
+            Users may mint 1 NFT for presale if they are on the whitelist. 
+            
+          </s.TextDescription>
+          <s.TextDescription
+            style={{
+              textAlign: "center",
+              color: "var(--primary-text)",
+            }}
+          >
+            Please do not try to mint more than 1 NFT as it will fail, thank you!
+            
+          </s.TextDescription>
+         
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
