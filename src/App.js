@@ -295,15 +295,7 @@ function App() {
               </>
             ) : (
               <>
-                <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  Presale or Whitelist for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_PRE_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
-                </s.TextTitle>
-                <s.SpacerXSmall />
-                <s.SpacerXSmall />
-                
+             
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
@@ -401,7 +393,7 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            Users may mint 1 NFT for presale if they are on the whitelist. 
+            Users may mint 1 NFT per transaction.
             
           </s.TextDescription>
           <s.TextDescription
@@ -410,22 +402,9 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            Please do not try to mint more than 1 NFT as it will fail, thank you!
+            Trying to purchase more than one NFT per transaction will cause failure.
             
           </s.TextDescription>
-         
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          claimPreNFTs();
-                          getData();
-                        }}
-                      >
-                        {claimingNft ? "BUSY" : "Pre-Sale Mint"}
-                      </StyledButton>
-                    </s.Container>
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
