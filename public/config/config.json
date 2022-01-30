@@ -13,7 +13,7 @@
   "PRE_MINT_WEI_COST": 120000000000000000,
   "DISPLAY_COST": 0.15,
   "DISPLAY_PRE_COST": 0.12,
-  "GAS_LIMIT": 285000,
+  "GAS_LIMIT": 385000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/metheors-genesis-nft",
   "SHOW_BACKGROUND": true
