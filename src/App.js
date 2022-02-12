@@ -299,14 +299,15 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Public Mint for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  Public Mint is now closed, please check out our discord for the latest information https://discord.gg/Kd9ayJpnCm
+                {/*   Public Mint for 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                  {CONFIG.NETWORK.SYMBOL}. */}
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Excluding gas fees.
+                  {/* Excluding gas fees. */}
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -393,8 +394,8 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            Users may mint 1 NFT per transaction.
-            
+            {/* Users may mint 1 NFT per transaction. */}
+            Public Mint is now closed.
           </s.TextDescription>
           <s.TextDescription
             style={{
@@ -402,11 +403,11 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            Trying to purchase more than one NFT per transaction will cause failure.
-            
+            {/* Trying to purchase more than one NFT per transaction will cause failure. */}
+            Check out our discord for more information! https://discord.gg/Kd9ayJpnCm
           </s.TextDescription>
                     <s.SpacerSmall />
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    {/* <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
@@ -417,7 +418,7 @@ function App() {
                       >
                         {claimingNft ? "BUSY" : "Public Mint"}
                       </StyledButton>
-                    </s.Container>
+                    </s.Container> */}
                   </>
                 )}
               </>
